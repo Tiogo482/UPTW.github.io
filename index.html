@@ -8,7 +8,7 @@
 </head>
 
 <style>
-    * {
+    {
         margin: 0 auto;
         padding: 0;
     }
@@ -17,62 +17,25 @@
         background-color: #111;
     }
 
-    .max-width {
-        max-width: 500px;
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        margin-top: 10%;
-        background-color: #FFF;
-        box-shadow: 0 0 5px #FFF;
-        text-align: center;
-    }
-
-    h1 {
-        font-family: 'Courier New', Courier, monospace;
-        margin-top: 20px;
-    }
-
-    button {
-        padding: 10px;
-        border: none;
-        outline: none;
-        font-family: 'Segoe UI';
-        font-size: 1.1em;
-        transition: all .5s;
-        cursor: pointer;
-        border-radius: 25px;
-    }
-
-    button:hover {
-        background-color: #a1c0d1;
-    }
-
-    button:active {
-        background-color: #111;
-    }
-
-    .bg-green {
-        background-color: #b2d1a1;
-    }
-
-    .bg-yellow {
-        background-color: #d1cba1;
-    }
-
-    .bg-red {
-        background-color: #d1a1a1;
-    }
 </style>
 
 <body>
 
-    <div class="max-width">
-       <!-- <button onclick="start();" class="bg-green">Iniciar</button>
-        <button onclick="pause();" class="bg-yellow">Pausar</button>
-        <button onclick="stop();" class="bg-red">Parar</button>-->
-        <h1 id="counter">00:00:00</h1>
-    </div>
+     var myDate = $(".birthDate"),
+     myTime = $(".birthTimeDate"),
+     fullDate, fullHour, fullTime;
+ 
+ $(".confirmButton").on("click", function(event) {
+     fullDate = myDate.val().split('.'),
+     fullHour = myTime.val().split(':');
+     alert("Date =" + java_mktime(fullDate[2],fullDate[1],fullDate[0],fullHour[0],fullHour[1]) );
+     console.log( fullDate[3],fullDate[2],fullDate[1],fullHour[0],fullHour[1] );
+     event.preventDefault();
+ });
+ 
+function java_mktime(year,month,day,hour,minute) {
+    return new Date(year, month - 1, day, hour, minute, 0, 0).getTime() / 1000;
+}
 <script src="cron.js"></script>
 </body>
 
