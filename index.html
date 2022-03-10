@@ -7,8 +7,15 @@
     <title>Ukraine protects the world</title>
 </head>
 
-<style>body {background: #363636;}</style>
-<style>.timer,.tt_text{display: flex;color:#eeff00;justify-content: center;}.tt_text{font-size:2rem;color:#0906d5;font-weight:700;text-align: center;} .timer__items {display: flex;font-size: 2.5rem;font-weight:700}.timer__item {position: relative;min-width: 60px;margin-left: 10px;margin-right: 10px;padding-bottom: 15px;text-align: center;}.timer__item::before {content: attr(data-title);display: block;position: absolute;left: 50%;bottom: 0;transform: translateX(-50%);font-size: 14px;}.timer__item:not(:last-child)::after {content: ':';position: absolute;right: -15px;}</style>
+<style>body {background: #363636;}
+section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) }
+</style>
+<style>.timer,.tt_text{display: flex;color:#eeff00;align-items: center;justify-content: center;}.tt_text{font-size:2rem;color:#0906d5;font-weight:700;text-align: center;justify-content: center;} .timer__items {display: flex;font-size: 2.5rem;font-weight:700}.timer__item {position: relative;min-width: 60px;margin-left: 10px;margin-right: 10px;padding-bottom: 15px;text-align: center;}.timer__item::before {content: attr(data-title);display: block;position: absolute;left: 50%;bottom: 0;transform: translateX(-50%);font-size: 14px;}.timer__item:not(:last-child)::after {content: ':';position: absolute;right: -15px;}</style>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
       const beginDate = new Date('2022-02-24T05:00:00');
@@ -35,7 +42,7 @@
       timerId = setInterval(countdownTimer, 1000);
     });
   </script>
-
+<section>
 <div class="tt_text">Ukraine protects the world</div>
 <div class="timer  mb-3">
 <div class="timer__items">
@@ -44,6 +51,7 @@
 <div class="timer__item timer__minutes">00</div>
 </div>
 </div>
+</section>
 
 <script>
 Cd=document;Cr="&"+Math.random();Cp="&s=1";
