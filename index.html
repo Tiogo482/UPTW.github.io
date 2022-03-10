@@ -3,37 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head> <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Ukraine protects the worldo</title>
 </head>
 
-<style>
-    {
-        margin: 0 auto;
-        padding: 0;
-    }
+<style>.timer,.tt_text{display: flex;justify-content: center;}.tt_text{font-size:2rem;color:#d50663;font-weight:700;text-align: center;} .timer__items {display: flex;font-size: 2.5rem;font-weight:700}.timer__item {position: relative;min-width: 60px;margin-left: 10px;margin-right: 10px;padding-bottom: 15px;text-align: center;}.timer__item::before {content: attr(data-title);display: block;position: absolute;left: 50%;bottom: 0;transform: translateX(-50%);font-size: 14px;}.timer__item:not(:last-child)::after {content: ':';position: absolute;right: -15px;}</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const beginDate = new Date('2022-02-24T05:00:00');
+      let timerId = null;
+      function declensionNum(num, words) {
+        return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+      }
+      function countdownTimer() {
+        const diff = new Date() - beginDate;
+        const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+        const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+        const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+        $days.textContent = days < 10 ? '0' + days : days;
+        $hours.textContent = hours < 10 ? '0' + hours : hours;
+        $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+        $days.dataset.title = declensionNum(days, ['день', 'дні', 'днів']);
+        $hours.dataset.title = declensionNum(hours, ['година', 'години', 'годин']);
+        $minutes.dataset.title = declensionNum(minutes, ['хвилина', 'хвилини', 'хвилин']);
+      }
+      const $days = document.querySelector('.timer__days');
+      const $hours = document.querySelector('.timer__hours');
+      const $minutes = document.querySelector('.timer__minutes');
+      countdownTimer();
+      timerId = setInterval(countdownTimer, 1000);
+    });
+  </script>
 
+<div class="tt_text">Ukraine protects the worldo</div>
+<div class="timer  mb-3">
+<div class="timer__items">
+<div class="timer__item timer__days">00</div>
+<div class="timer__item timer__hours">00</div>
+<div class="timer__item timer__minutes">00</div>
+</div>
+</div>
 
-</style>
-
-<body>
-
-     var myDate = $(".birthDate"),
-     myTime = $(".birthTimeDate"),
-     fullDate, fullHour, fullTime;
- 
- $(".confirmButton").on("click", function(event) {
-     fullDate = myDate.val().split('.'),
-     fullHour = myTime.val().split(':');
-     alert("Date =" + java_mktime(fullDate[2],fullDate[1],fullDate[0],fullHour[0],fullHour[1]) );
-     console.log( fullDate[3],fullDate[2],fullDate[1],fullHour[0],fullHour[1] );
-     event.preventDefault();
- });
- 
-function java_mktime(year,month,day,hour,minute) {
-    return new Date(year, month - 1, day, hour, minute, 0, 0).getTime() / 1000;
-}
-<script src="cron.js"></script>
-</body>
+<script>
+Cd=document;Cr="&"+Math.random();Cp="&s=1";
+Cd.cookie="b=b";if(Cd.cookie)Cp+="&c=1";
+Cp+="&t="+(new Date()).getTimezoneOffset();
+if(self!=top)Cp+="&f=1";
+</script>
 
 </html>
