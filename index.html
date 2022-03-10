@@ -7,7 +7,8 @@
     <title>Ukraine protects the worldo</title>
 </head>
 
-<style>.timer,.tt_text{display: flex;justify-content: center;}.tt_text{font-size:2rem;color:#0906d5;font-weight:700;text-align: center;} .timer__items {display: flex;font-size: 2.5rem;font-weight:700}.timer__item {position: relative;min-width: 60px;margin-left: 10px;margin-right: 10px;padding-bottom: 15px;text-align: center;}.timer__item::before {content: attr(data-title);display: block;position: absolute;left: 50%;bottom: 0;transform: translateX(-50%);font-size: 14px;}.timer__item:not(:last-child)::after {content: ':';position: absolute;right: -15px;}</style>
+<style>body {background: #363636;}</style>
+<style>.timer,.tt_text{display: flex;color:#eeff00;justify-content: center;}.tt_text{font-size:2rem;color:#0906d5;font-weight:700;text-align: center;} .timer__items {display: flex;font-size: 2.5rem;font-weight:700}.timer__item {position: relative;min-width: 60px;margin-left: 10px;margin-right: 10px;padding-bottom: 15px;text-align: center;}.timer__item::before {content: attr(data-title);display: block;position: absolute;left: 50%;bottom: 0;transform: translateX(-50%);font-size: 14px;}.timer__item:not(:last-child)::after {content: ':';position: absolute;right: -15px;}</style>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
       const beginDate = new Date('2022-02-24T05:00:00');
@@ -23,9 +24,9 @@
         $days.textContent = days < 10 ? '0' + days : days;
         $hours.textContent = hours < 10 ? '0' + hours : hours;
         $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
-        $days.dataset.title = declensionNum(days, ['день', 'дні', 'днів']);
-        $hours.dataset.title = declensionNum(hours, ['година', 'години', 'годин']);
-        $minutes.dataset.title = declensionNum(minutes, ['хвилина', 'хвилини', 'хвилин']);
+        $days.dataset.title = declensionNum(days, ['day', 'days', 'days']);
+        $hours.dataset.title = declensionNum(hours, ['hour', 'hours', 'hours']);
+        $minutes.dataset.title = declensionNum(minutes, ['minute', 'minutes', 'minutes']);
       }
       const $days = document.querySelector('.timer__days');
       const $hours = document.querySelector('.timer__hours');
